@@ -24,6 +24,8 @@ public class SaveScript : MonoBehaviour {
     // Objeto que indica que se no ha establecido conexion
     public GameObject disconnected;
 
+    public GameObject clientPanel;
+
     #endregion
 
     #region Metodos
@@ -61,12 +63,14 @@ public class SaveScript : MonoBehaviour {
     {
         // Prepara la peticion a la web api
         using (UnityWebRequest www = UnityWebRequest.Get(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY, GameManager.ipAddress))))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY_LOCAL, GameManager.localhost))))
         {
             // Hace la peticion a la web api
             yield return www.SendWebRequest();
 
+
             // Comprueba el valor devuelto por el metodo
+            clientPanel.SetActive(www.responseCode == 200);
             connected.SetActive(www.responseCode == 200);
             disconnected.SetActive(!connected.activeSelf);
 

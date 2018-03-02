@@ -50,7 +50,7 @@ public class LoadButtonScript : MonoBehaviour
     {
         // Se crea la peticion a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Get(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENTS, GameManager.ipAddress))))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT, GameManager.ipAddress))))
         {
             // Envia la peticion a la WebAPI y espera la respuesta
             yield return www.SendWebRequest();
