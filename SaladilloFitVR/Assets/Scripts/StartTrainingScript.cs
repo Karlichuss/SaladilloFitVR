@@ -37,7 +37,10 @@ public class StartTrainingScript : MonoBehaviour
 
         // Crea la petición a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Post(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_LOG_TRAINING_LOCAL, GameManager.localhost)), form))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_LOG_TRAINING, GameManager.ipAddress)), form))
+
+        //using (UnityWebRequest www = UnityWebRequest.Post(
+        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_LOG_TRAINING_LOCAL, GameManager.localhost)), form))
         {
             // Envia la petición a la WebAPI y espera la respuesta
             yield return www.SendWebRequest();

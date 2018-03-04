@@ -69,7 +69,10 @@ public class SaveScript : MonoBehaviour
     {
         // Prepara la petición a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Get(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY_LOCAL, GameManager.localhost))))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY, GameManager.ipAddress))))
+
+        //using (UnityWebRequest www = UnityWebRequest.Get(
+        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY_LOCAL, GameManager.localhost))))
         {
             // Hace la petición a la WebAPI
             yield return www.SendWebRequest();

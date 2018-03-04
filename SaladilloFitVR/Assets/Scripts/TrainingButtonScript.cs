@@ -56,7 +56,10 @@ public class TrainingButtonScript : MonoBehaviour {
     {
         // Preparamos la petición a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Get(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_TRAINING_LOCAL, GameManager.localhost, training))))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_TRAINING, GameManager.ipAddress, training))))
+
+        //using (UnityWebRequest www = UnityWebRequest.Get(
+        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_TRAINING_LOCAL, GameManager.localhost, training))))
         {
             // Hace la petición a la WebAPI
             yield return www.SendWebRequest();

@@ -49,7 +49,10 @@ public class LoginText : MonoBehaviour
     {
         // Prepara la petición a la web api
         using (UnityWebRequest www = UnityWebRequest.Get(
-            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT_LOCAL, GameManager.localhost, dni.text))))
+            Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT, GameManager.ipAddress, dni.text))))
+
+        //using (UnityWebRequest www = UnityWebRequest.Get(
+        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT_LOCAL, GameManager.localhost, dni.text))))
         {
             // Hace la petición a la web api
             yield return www.SendWebRequest();
