@@ -346,25 +346,18 @@
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Procedural Mesh\ExtrudeRandomEdges.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
-    <Compile Include="Assets\Scripts\ButtonClick.cs" />
     <Compile Include="Assets\Scripts\ButtonGazeClick.cs" />
     <Compile Include="Assets\Scripts\ClearScript.cs" />
-    <Compile Include="Assets\Scripts\ClientButtonScript.cs" />
     <Compile Include="Assets\Scripts\ConfigurationText.cs" />
     <Compile Include="Assets\Scripts\CustomPointerTimer.cs" />
     <Compile Include="Assets\Scripts\DeleteScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\LoadButtonScript.cs" />
     <Compile Include="Assets\Scripts\LoginText.cs" />
     <Compile Include="Assets\Scripts\MoveJoystick.cs" />
-    <Compile Include="Assets\Scripts\MovementDisc.cs" />
-    <Compile Include="Assets\Scripts\PlayAnimation.cs" />
     <Compile Include="Assets\Scripts\SalirButton.cs" />
     <Compile Include="Assets\Scripts\SaveScript.cs" />
-    <Compile Include="Assets\Scripts\ScrollDown.cs" />
-    <Compile Include="Assets\Scripts\SphereScript.cs" />
-    <Compile Include="Assets\Scripts\TrainingScript.cs" />
-    <Compile Include="Assets\Scripts\VamosButton.cs" />
+    <Compile Include="Assets\Scripts\StartTrainingScript.cs" />
+    <Compile Include="Assets\Scripts\TrainingButtonScript.cs" />
     <Compile Include="Assets\Scripts\WriterScript.cs" />
   </ItemGroup>
   <ItemGroup>

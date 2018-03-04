@@ -1,31 +1,30 @@
 ﻿///////////////////////////////
-// Práctica: SaladilloVR
+// Práctica: SaladilloFitVR
 // Alumno: Antonio Carlos Ordoñez Cintrano
 // Curso: 2017/2018
 // Fichero: WriterScript.cs
 ///////////////////////////////
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WriterScript : MonoBehaviour {
+public class WriterScript : MonoBehaviour
+{
 
-    #region Declaracion de variables
+    #region Declaración de variables
 
-    // Objeto con la direccion IP instroducida por el usuario
+    // Objeto con la dirección IP introducida por el usuario
     public Text ipAddress;
 
     #endregion
 
-    #region Metodos
+    #region Métodos
 
     /// <summary>
-    /// Metodo que se ejecuta cuando se pulsa en el boton
+    /// Método que se ejecuta cuando se pulsa en el botón.
     /// </summary>
     /// <remarks>
-    /// Obtiene el texto del boton y se lo concatena al texto de ipAddress
+    /// Obtiene el texto del botón y se lo concatena al texto de ipAddress.
     /// </remarks>
     public void Click()
     {

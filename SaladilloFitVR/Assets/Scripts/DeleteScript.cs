@@ -1,31 +1,30 @@
 ﻿///////////////////////////////
-// Práctica: SaladilloVR
+// Práctica: SaladilloFitVR
 // Alumno: Antonio Carlos Ordoñez Cintrano
 // Curso: 2017/2018
 // Fichero: DeleteScript.cs
 ///////////////////////////////
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DeleteScript : MonoBehaviour {
+public class DeleteScript : MonoBehaviour
+{
 
-    #region Declaracion de variables
+    #region Declaración de variables
 
-    // Objeto con la direccion IP introducida por el usuario
+    // Objeto con la dirección IP introducida por el usuario
     public Text ipAddress;
 
     #endregion
 
-    #region Metodos
+    #region Métodos
 
     /// <summary>
-    /// Metodo que se ejecuta cuando se pulsa en el boton
+    /// Método que se ejecuta cuando se pulsa en el botón.
     /// </summary>
     /// <remarks>
-    /// Borra todo el texto de ipAddress
+    /// Borra todo el texto de ipAddress.
     /// </remarks>
     public void Click()
     {
