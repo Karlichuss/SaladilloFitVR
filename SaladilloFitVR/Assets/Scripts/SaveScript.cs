@@ -28,6 +28,16 @@ public class SaveScript : MonoBehaviour
     // Referencia al panel Client
     public GameObject clientPanel;
 
+    // Referencia a la sesion
+    public Text dni;
+
+    // Referencia al panel Welcome;
+    public GameObject training;
+    public GameObject details;
+    public GameObject history;
+
+    // Referencia al ascensor
+    public GameObject elevator;
     #endregion
 
     #region Métodos
@@ -46,6 +56,14 @@ public class SaveScript : MonoBehaviour
         PlayerPrefs.SetString(GameManager.IP_ADDRESS, GameManager.ipAddress);
         // Se almacena el valor en la configuración de la aplicación
         PlayerPrefs.Save();
+        // Se cierra la sesion
+        GameManager.dni = "";
+        dni.text = "";
+        // Se ocultan todos los paneles de la sesión
+        elevator.SetActive(false);
+        training.SetActive(false);
+        details.SetActive(false);
+        history.SetActive(false);
         // Se comprueba la conectividad con la WebAPI
         CheckConnectivity();
     }
@@ -70,9 +88,6 @@ public class SaveScript : MonoBehaviour
         // Prepara la petición a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Get(
             Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY, GameManager.ipAddress))))
-
-        //using (UnityWebRequest www = UnityWebRequest.Get(
-        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY_LOCAL, GameManager.localhost))))
         {
             // Hace la petición a la WebAPI
             yield return www.SendWebRequest();

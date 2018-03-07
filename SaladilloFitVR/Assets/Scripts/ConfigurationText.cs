@@ -30,12 +30,18 @@ public class ConfigurationText : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        // Se recupera el valor de dirección IP almacenado en la configuracion de la aplicación
-        GameManager.ipAddress = PlayerPrefs.GetString(GameManager.IP_ADDRESS);
-        // Mostramos la dirección IP
-        GetComponent<Text>().text = GameManager.ipAddress;
-        // Se comprueba la conectividad con la Web API
-        CheckConnectivity();
+        if (!PlayerPrefs.GetString(GameManager.IP_ADDRESS).Equals(string.Empty))
+        {
+            // Se recupera el valor de dirección IP almacenado en la configuracion de la aplicación
+            GameManager.ipAddress = PlayerPrefs.GetString(GameManager.IP_ADDRESS);
+            // Mostramos la dirección IP
+            GetComponent<Text>().text = GameManager.ipAddress;
+            // Se comprueba la conectividad con la Web API
+            CheckConnectivity();
+        } else
+        {
+            disconnected.SetActive(true);
+        }
     }
 
     /// <summary>
@@ -58,9 +64,6 @@ public class ConfigurationText : MonoBehaviour
         // Prepara la petición a la web API
         using (UnityWebRequest www = UnityWebRequest.Get(
             Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY, GameManager.ipAddress))))
-
-        //using (UnityWebRequest www = UnityWebRequest.Get(
-        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_CHECK_CONECTIVITY_LOCAL, GameManager.localhost))))
         {
             // Hace la petición a la web API
             yield return www.SendWebRequest();

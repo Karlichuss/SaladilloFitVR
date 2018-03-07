@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>Android:13</UnityBuildTarget>
     <UnityVersion>2017.2.1f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -351,11 +353,15 @@
     <Compile Include="Assets\Scripts\ConfigurationText.cs" />
     <Compile Include="Assets\Scripts\CustomPointerTimer.cs" />
     <Compile Include="Assets\Scripts\DeleteScript.cs" />
+    <Compile Include="Assets\Scripts\EndTrainingScript.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\LoadHistoryScript.cs" />
+    <Compile Include="Assets\Scripts\LoadMachine.cs" />
     <Compile Include="Assets\Scripts\LoginText.cs" />
     <Compile Include="Assets\Scripts\MoveJoystick.cs" />
-    <Compile Include="Assets\Scripts\SalirButton.cs" />
+    <Compile Include="Assets\Scripts\MovementDisc.cs" />
     <Compile Include="Assets\Scripts\SaveScript.cs" />
+    <Compile Include="Assets\Scripts\StartSpinningScript.cs" />
     <Compile Include="Assets\Scripts\StartTrainingScript.cs" />
     <Compile Include="Assets\Scripts\TrainingButtonScript.cs" />
     <Compile Include="Assets\Scripts\WriterScript.cs" />

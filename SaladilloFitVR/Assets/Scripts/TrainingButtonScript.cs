@@ -24,6 +24,9 @@ public class TrainingButtonScript : MonoBehaviour {
     // Texto donde vamos a mostrar el titulo de los detalles
     public GameObject detail;
 
+    // Referencia al botón Vamos
+    public GameObject vamos;
+
     #endregion
 
     #region Métodos
@@ -57,9 +60,6 @@ public class TrainingButtonScript : MonoBehaviour {
         // Preparamos la petición a la WebAPI
         using (UnityWebRequest www = UnityWebRequest.Get(
             Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_TRAINING, GameManager.ipAddress, training))))
-
-        //using (UnityWebRequest www = UnityWebRequest.Get(
-        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_TRAINING_LOCAL, GameManager.localhost, training))))
         {
             // Hace la petición a la WebAPI
             yield return www.SendWebRequest();
@@ -76,12 +76,13 @@ public class TrainingButtonScript : MonoBehaviour {
             if (list.training.Length != 0)
             {
                 detail.SetActive(true);
+                vamos.SetActive(true);
 
                 // Almacenamos el entrenamiento
                 GameManager.training = training;
 
                 // Ponemos el titulo del entrenamiento
-                detail.GetComponentInChildren<Text>().text = "Entrenamiento " + training + ": ";
+                detail.GetComponentInChildren<Text>().text = "Entrenamiento " + training;
 
                 // Y por cada ejercicio que tenga el entrenamiento
                 for (int i = 0; i < list.training.Length; i++)

@@ -42,6 +42,16 @@ public class ButtonGazeClick : MonoBehaviour
             // Se invoca el click del botón
             GetComponent<Button>().onClick.Invoke();
         }
+        // Si el usuario esta mirando el objecto y el temporizador ha 
+        // terminado de contar, reiniciaremos el contador para que este 
+        // pueda volver a funcionar
+        else if (isHover && executed)
+        {
+            // Marcamos la acción como no realizada
+            executed = false;
+            // Iniciamos el contador del puntero, indicandole el tiempo de activación
+            CustomPointerTimer.CPT.StartCounting(activationTime);
+        }
     }
 
 

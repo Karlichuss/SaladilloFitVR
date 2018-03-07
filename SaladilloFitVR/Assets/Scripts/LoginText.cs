@@ -24,6 +24,10 @@ public class LoginText : MonoBehaviour
     public GameObject details;
     // Mensaje de bienvenida
     public Text welcome;
+    // Historico del cliente
+    public GameObject historic;
+    // Referencia al ascensor
+    public GameObject elevator;
 
     #endregion
 
@@ -50,9 +54,6 @@ public class LoginText : MonoBehaviour
         // Prepara la petición a la web api
         using (UnityWebRequest www = UnityWebRequest.Get(
             Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT, GameManager.ipAddress, dni.text))))
-
-        //using (UnityWebRequest www = UnityWebRequest.Get(
-        //    Uri.EscapeUriString(string.Format(GameManager.WEB_API_GET_CLIENT_LOCAL, GameManager.localhost, dni.text))))
         {
             // Hace la petición a la web api
             yield return www.SendWebRequest();
@@ -62,9 +63,11 @@ public class LoginText : MonoBehaviour
             if (result.Equals("\"\""))
             {
                 GameManager.name = "";
-                welcome.text = "Bienvenid@ a SaladilloFitVR";
+                welcome.text = "Bienvenid@ a Saladillo FIT VR";
                 trainings.SetActive(false);
                 details.SetActive(false);
+                historic.SetActive(false);
+                elevator.SetActive(false);
             }
             // Si existe el usuario
             else if (result.Length > 0)
@@ -74,6 +77,8 @@ public class LoginText : MonoBehaviour
                 welcome.text = string.Format("Hola {0}", GameManager.name);
                 trainings.SetActive(true);
                 details.SetActive(true);
+                historic.SetActive(true);
+                elevator.SetActive(true);
             }
         }
     }
